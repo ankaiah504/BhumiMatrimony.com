@@ -1,0 +1,30 @@
+Ubuntu: Docker Configuration
+
+sudo apt install git
+
+git clone url
+username:
+password : personal access token---------------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
+
+sudo apt install maven
+
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install maven
+
+mvn -version
+mvn clean
+
+sudo apt install openjdk-17-jdk
+
+build using :
+
+mvn package
+
+
+
+
+
+
+

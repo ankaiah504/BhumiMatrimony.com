@@ -1,6 +1,5 @@
 FROM openjdk:11
-ADD target/SubscriberService-0.0.1-SNAPSHOT.jar SubscriberService-0.0.1-SNAPSHOT.jar
-
+COPY target/subscriber-service.jar  /usr/app/
 ADD src/main/resource/application.properties application.properties
-
-ENTRYPOINT ["java","-jar","SubscriberService-0.0.1-SNAPSHOT.jar","-Dspring.config.location=application.properties"]
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","subscriber-service.jar","-Dspring.config.location=application.properties"]
