@@ -22,6 +22,25 @@ build using :
 
 mvn package
 
+save file:  :wq
+
+Installing docker :
+
+sudo apt update
+curl -fsSL get.docker.com | /bin/bash
+sudo usermod -aG docker ubuntu 
+exit
+
+
+To check docker images:
+
+docker images 
+
+
+docker build . -f Dockerfile.txt
+
+
+while creating docker file Name Should be "Dockerfile"
 
 
 
