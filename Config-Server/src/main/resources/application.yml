@@ -1,0 +1,24 @@
+server:
+  port: 1111
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ankaiah504/bhumi-matrimony-properties.git
+          clone-on-start: true
+          username: ankaiah.sree18@gmail.com
+          password: Shivanisree@143
+          default-label: main
+          
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+        
+        
+        
+        
