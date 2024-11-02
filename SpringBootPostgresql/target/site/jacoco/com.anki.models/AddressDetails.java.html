@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AddressDetails.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpringBootPostgresql</a> &gt; <a href="index.source.html" class="el_package">com.anki.models</a> &gt; <span class="el_source">AddressDetails.java</span></div><h1>AddressDetails.java</h1><pre class="source lang-java linenums">package com.anki.models;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class AddressDetails {
+
+	@Id
+	private int emp_id;
+	
+	private char addressType;
+	
+	private String flaot;
+	
+	private String Streat;
+	
+	private String country;
+	
+	private String pincode;
+	@ManyToOne
+	 @JoinColumn(name = &quot;personal_details_id&quot;, nullable = false)
+	private PersonalDetails personalDetails;
+	public int getEmp_id() {
+<span class="nc" id="L27">		return emp_id;</span>
+	}
+	public void setEmp_id(int emp_id) {
+<span class="nc" id="L30">		this.emp_id = emp_id;</span>
+<span class="nc" id="L31">	}</span>
+	public char getAddressType() {
+<span class="nc" id="L33">		return addressType;</span>
+	}
+	public void setAddressType(char addressType) {
+<span class="nc" id="L36">		this.addressType = addressType;</span>
+<span class="nc" id="L37">	}</span>
+	public String getFlaot() {
+<span class="nc" id="L39">		return flaot;</span>
+	}
+	public void setFlaot(String flaot) {
+<span class="nc" id="L42">		this.flaot = flaot;</span>
+<span class="nc" id="L43">	}</span>
+	public String getStreat() {
+<span class="nc" id="L45">		return Streat;</span>
+	}
+	public void setStreat(String streat) {
+<span class="nc" id="L48">		Streat = streat;</span>
+<span class="nc" id="L49">	}</span>
+	public String getCountry() {
+<span class="nc" id="L51">		return country;</span>
+	}
+	public void setCountry(String country) {
+<span class="nc" id="L54">		this.country = country;</span>
+<span class="nc" id="L55">	}</span>
+	public String getPincode() {
+<span class="nc" id="L57">		return pincode;</span>
+	}
+	public void setPincode(String pincode) {
+<span class="nc" id="L60">		this.pincode = pincode;</span>
+<span class="nc" id="L61">	}</span>
+	public PersonalDetails getPersonalDetails() {
+<span class="nc" id="L63">		return personalDetails;</span>
+	}
+	public void setPersonalDetails(PersonalDetails personalDetails) {
+<span class="nc" id="L66">		this.personalDetails = personalDetails;</span>
+<span class="nc" id="L67">	}</span>
+	public AddressDetails(int emp_id, char addressType, String flaot, String streat, String country, String pincode,
+			PersonalDetails personalDetails) {
+<span class="nc" id="L70">		super();</span>
+<span class="nc" id="L71">		this.emp_id = emp_id;</span>
+<span class="nc" id="L72">		this.addressType = addressType;</span>
+<span class="nc" id="L73">		this.flaot = flaot;</span>
+<span class="nc" id="L74">		Streat = streat;</span>
+<span class="nc" id="L75">		this.country = country;</span>
+<span class="nc" id="L76">		this.pincode = pincode;</span>
+<span class="nc" id="L77">		this.personalDetails = personalDetails;</span>
+<span class="nc" id="L78">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

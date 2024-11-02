@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.anki.controller.EmployeeControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.641 s -- in com.anki.controller.EmployeeControllerTest

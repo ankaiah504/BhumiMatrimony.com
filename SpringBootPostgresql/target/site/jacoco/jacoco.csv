@@ -1,0 +1,15 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+SpringBootPostgresql,com.anki.component,SchedularService,0,19,0,0,0,5,0,2,0,2
+SpringBootPostgresql,com.anki,SpringBootPostgresqlApplication,5,3,0,0,2,1,1,1,1,1
+SpringBootPostgresql,com.anki.models,EmployeeDetails,0,59,0,0,0,25,0,17,0,17
+SpringBootPostgresql,com.anki.models,AddressDetails,73,0,0,0,30,0,15,0,15,0
+SpringBootPostgresql,com.anki.models,EmployeeDTO,0,46,0,0,0,20,0,10,0,10
+SpringBootPostgresql,com.anki.models,PersonalDetails,53,3,0,0,22,2,11,1,11,1
+SpringBootPostgresql,com.anki.models,EmployeeRequest,0,76,0,0,0,32,0,16,0,16
+SpringBootPostgresql,com.anki.models,ErrorResponse,0,47,0,0,0,18,0,9,0,9
+SpringBootPostgresql,com.anki.controller,GlobalExceptionController,0,74,0,0,0,15,0,6,0,6
+SpringBootPostgresql,com.anki.controller,EmployeeController,20,41,2,2,6,12,2,3,0,3
+SpringBootPostgresql,com.anki.service.impl,EmployeeImpl,29,72,3,3,8,20,3,3,0,3
+SpringBootPostgresql,com.anki.utility,DateFormat,3,29,0,0,2,9,0,2,0,2
+SpringBootPostgresql,com.anki.exception,CustomException,0,17,0,0,0,7,0,4,0,4
+SpringBootPostgresql,com.anki.exception,GenaricException,0,54,0,0,0,20,0,9,0,9
