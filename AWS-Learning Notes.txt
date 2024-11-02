@@ -4,7 +4,6 @@ sudo apt install git
 
 git clone url
 username:
-password : personal access token---------------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
 
 sudo apt install maven
 
