@@ -3,18 +3,18 @@ server:
 
 spring:
   profiles:
-    active: dev  # Set the active profile to dev or prod depending on the requirement
+    active: dev
   cloud:
     config:
-      uri: https://github.com/ankaiah504/BhumiMatrimony.com.git  # Git repository URL
+      uri: https://github.com/ankaiah504/BhumiMatrimony.com.git
       server:
         git:
-          uri: https://github.com/ankaiah504/BhumiMatrimony.com.git  # Same repository URL as above
+          uri: https://github.com/ankaiah504/BhumiMatrimony.com.git
           search-paths:
-            - 'Config-Cloud-Setup/{application}'  # Point to the Config-Cloud-Setup folder and use {application} for the profile-specific file
-          clone-on-start: true  # Clone repository on startup
-          username: ankaiah.sree18@gmail.com  # Your GitHub username (for private repositories)
-          password: Shivanisree@143  # Your GitHub token or password (use a token for better security)
+            - 'Config-Cloud-Setup'
+          clone-on-start: true  # 
+          username: ankaiah.sree18@gmail.com  
+          password: Shivanisree@143
           default-label: master
          
 management:
