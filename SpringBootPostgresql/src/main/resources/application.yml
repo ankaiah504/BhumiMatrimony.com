@@ -20,5 +20,11 @@ management:
      include: 
 server:
  port: 3000
-     
-     
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html  # Custom Swagger UI path
+#  api-docs:
+#    path: /api-docs 
+# servlet:
+#  context-path: /api/something
+  

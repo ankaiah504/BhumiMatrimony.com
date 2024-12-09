@@ -6,3 +6,16 @@ spring:
     import: optional:configserver:http://localhost:1111
   application:
     name: Investor-Service
+resilience4j:
+  circuitbreaker:
+    instances:
+      Investor-Service:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 2
+        waitDurationInOpenState: 10000ms
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+logging:
+  level:
+    io.github.resilience4j: DEBUG

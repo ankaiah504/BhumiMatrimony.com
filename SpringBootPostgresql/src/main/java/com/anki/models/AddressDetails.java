@@ -71,7 +71,7 @@ public class AddressDetails {
 		this.emp_id = emp_id;
 		this.addressType = addressType;
 		this.flaot = flaot;
-		Streat = streat;
+		this.Streat = streat;
 		this.country = country;
 		this.pincode = pincode;
 		this.personalDetails = personalDetails;

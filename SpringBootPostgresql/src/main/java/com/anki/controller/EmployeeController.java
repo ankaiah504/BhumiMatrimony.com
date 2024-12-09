@@ -17,8 +17,14 @@ import com.anki.exception.GenaricException;
 import com.anki.models.EmployeeDTO;
 import com.anki.models.EmployeeDetails;
 import com.anki.models.EmployeeRequest;
+import com.anki.models.PersonRequest;
+import com.anki.models.PersonalDTO;
 import com.anki.service.impl.EmployeeImpl;
 
+//import io.swagger.v3.oas.annotations.media.Content;
+//import io.swagger.v3.oas.annotations.media.Schema;
+//import io.swagger.v3.oas.annotations.responses.ApiResponse;
+//import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 
 @RestController
@@ -27,6 +33,12 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeImpl impl;
+//	@ApiResponses(value = { 
+//	        @ApiResponse(responseCode = "200", description = "Save an employee", 
+//	content = {@Content(mediaType = "application/json",schema = @Schema(implementation = EmployeeDTO.class))}), 
+//	@ApiResponse(responseCode = "401",description = "Unauthorized user",content = @Content), 
+//	        @ApiResponse(responseCode = "404",description = "Employee not found",content = @Content), 
+//	        @ApiResponse(responseCode = "400",description = "Invalid employee id",content = @Content)})
 	@PostMapping("/emp/register")
 	public ResponseEntity<EmployeeDTO> saveEmployee(@Valid @RequestBody EmployeeRequest emp) {
 		EmployeeDTO dto=null;
@@ -39,6 +51,7 @@ public class EmployeeController {
 			}
 		}catch(Exception e) {
        //  throw e;
+			e.printStackTrace();
 			throw new GenaricException(e.getMessage());
 		}
 		return new ResponseEntity<>(dto,HttpStatus.OK);
@@ -65,5 +78,21 @@ public class EmployeeController {
 		return new ResponseEntity<>(emp.get(),HttpStatus.OK);
 
 	}
+  
+     
+ 	@PostMapping("/emp/personal/details")
+ 	public ResponseEntity<PersonalDTO> saveEmployeePersonal(@RequestBody PersonRequest emp) {
+ 		PersonalDTO dto=null;
+ 		try {
 
+ 				dto	=impl.savePersonalDetails(emp);
+
+ 		}catch(Exception e) {
+        //  throw e;
+ 			e.printStackTrace();
+ 			throw new GenaricException(e.getMessage());
+ 		}
+ 		return new ResponseEntity<>(dto,HttpStatus.OK);
+
+ 	}
 }

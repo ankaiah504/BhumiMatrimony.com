@@ -22,6 +22,10 @@ spring:
            uri: lb://INVESTOR-SERVICE
            predicates:
             - Path=/test/**
+         - id: Employee-Service
+           uri: lb://INVESTOR-SERVICE
+           predicates:
+            - Path=/capi/**
            filters:
             - AuthenticationFilter
          - id: authentication-api

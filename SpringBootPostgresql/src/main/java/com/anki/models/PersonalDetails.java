@@ -20,11 +20,10 @@ public class PersonalDetails {
 	private int id;
 	@Column(name = "pan", unique = true, nullable = false)
 	private String pan;
-	
 	private String name;
-	
-	private String salary;
-
+	private Double salary;
+	@Column(name = "emp_id", unique = true, nullable = false)
+	private int empId;
 	@OneToOne
     @JoinColumn(name = "employee_details_id")
 	private EmployeeDetails employeeDetails;
@@ -32,8 +31,6 @@ public class PersonalDetails {
 	@OneToMany(mappedBy="personalDetails",cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<AddressDetails> addressDetails;
 	
-	
-
 	public int getId() {
 		return id;
 	}
@@ -58,11 +55,11 @@ public class PersonalDetails {
 		this.name = name;
 	}
 
-	public String getSalary() {
+	public Double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(String salary) {
+	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 
@@ -74,7 +71,15 @@ public class PersonalDetails {
 		this.employeeDetails = employeeDetails;
 	}
 
-	public PersonalDetails(int id, String pan, String name, String salary, EmployeeDetails employeeDetails) {
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public PersonalDetails(int id, String pan, String name, Double salary, EmployeeDetails employeeDetails) {
 		super();
 		this.id = id;
 		this.pan = pan;
@@ -86,7 +91,6 @@ public class PersonalDetails {
 	public PersonalDetails() {
 		super();
 	}
-	
-	
-	
+
+
 }

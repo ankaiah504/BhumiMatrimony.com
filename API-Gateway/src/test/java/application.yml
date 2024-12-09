@@ -1,0 +1,33 @@
+server:
+  port: 5000
+  
+spring:
+  application:
+    name: API-Gateway
+
+  jmx:
+    enabled: false
+  cloud:
+      gateway:
+       default-filters:
+        - PrefixPath=//localhost:5000
+        - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+       discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+
+       routes:
+         - id: Investor-Service
+           uri: lb://INVESTOR-SERVICE
+           predicates:
+            - Path=/test/**
+           filters:
+            - AuthenticationFilter
+         - id: authentication-api
+           uri: lb://AUTH-SERVICE
+           predicates:
+           - Path=/auth/**
+        
+  main:
+    web-application-type: reactive

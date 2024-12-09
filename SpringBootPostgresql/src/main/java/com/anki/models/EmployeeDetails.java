@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
@@ -11,12 +12,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedNativeQuery;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="employee_details",uniqueConstraints = @UniqueConstraint(columnNames = "pan"))
+@NamedNativeQuery(name = "EmployeeDetails.findByEmployeeId", query = "select * from employee_details where emp_id = ?1", resultClass = EmployeeDetails.class)
+
 public class EmployeeDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -82,6 +86,5 @@ public class EmployeeDetails {
 	public void setPan(String pan) {
 		this.pan = pan;
 	}
-		
 	
 }
