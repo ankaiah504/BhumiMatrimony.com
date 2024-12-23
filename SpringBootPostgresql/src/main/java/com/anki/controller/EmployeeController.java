@@ -33,12 +33,7 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeImpl impl;
-//	@ApiResponses(value = { 
-//	        @ApiResponse(responseCode = "200", description = "Save an employee", 
-//	content = {@Content(mediaType = "application/json",schema = @Schema(implementation = EmployeeDTO.class))}), 
-//	@ApiResponse(responseCode = "401",description = "Unauthorized user",content = @Content), 
-//	        @ApiResponse(responseCode = "404",description = "Employee not found",content = @Content), 
-//	        @ApiResponse(responseCode = "400",description = "Invalid employee id",content = @Content)})
+
 	@PostMapping("/emp/register")
 	public ResponseEntity<EmployeeDTO> saveEmployee(@Valid @RequestBody EmployeeRequest emp) {
 		EmployeeDTO dto=null;
@@ -59,23 +54,19 @@ public class EmployeeController {
 	}
 	@GetMapping("/emp/{emp_id}")
 	public ResponseEntity<EmployeeDetails> getEmployeeDetails(@PathVariable int emp_id) {
-		Optional<EmployeeDetails> emp=null;
-		try {
-
+		EmployeeDetails emp=null;
+		try {            
 			Integer wrapperInt = Integer.valueOf(emp_id);
-
 			if(wrapperInt==null) {
 				throw new CustomException("Unable to find the Request Data");
 			}else {
 				emp=impl.getEmployeeDetails(emp_id);		
 			}
-		}catch(Exception e) {
-
-			
+		}catch(Exception e) {		
 			e.printStackTrace();
-
+			throw new CustomException(e.getMessage());
 		}
-		return new ResponseEntity<>(emp.get(),HttpStatus.OK);
+		return new ResponseEntity<>(emp,HttpStatus.OK);
 
 	}
   
@@ -84,7 +75,6 @@ public class EmployeeController {
  	public ResponseEntity<PersonalDTO> saveEmployeePersonal(@RequestBody PersonRequest emp) {
  		PersonalDTO dto=null;
  		try {
-
  				dto	=impl.savePersonalDetails(emp);
 
  		}catch(Exception e) {

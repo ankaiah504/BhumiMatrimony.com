@@ -73,14 +73,15 @@ public class EmployeeImpl implements EmployeeService{
 
 	}
 	@Override
-	public Optional<EmployeeDetails> getEmployeeDetails(int id) {
+	public EmployeeDetails getEmployeeDetails(int id) {
 		
-		Optional<EmployeeDetails> rmp=repo.findById(id);
-		if(rmp.isPresent()) {
-			System.out.println(rmp.get());
-		}
-		EmployeeDetails imp=rmp.get();
-		return rmp;
+		Optional<EmployeeDetails> rmp = repo.findById(id);
+	    
+	    // If not found, throw CustomException
+	    EmployeeDetails employee = rmp.orElseThrow(() -> new CustomException("Employee not found with id: " + id));
+
+	    // Return the employee details
+	    return employee;
 		
 	}
 	   public void sendEmployeeToKafka(EmployeeDetails employeeRequest) {

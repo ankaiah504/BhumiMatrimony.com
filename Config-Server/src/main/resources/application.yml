@@ -6,16 +6,17 @@ spring:
     active: dev
   cloud:
     config:
-      uri: https://github.com/ankaiah504/BhumiMatrimony.com.git
+      uri: https://github.com/ankaiah504/bhumi-matrimony-properties.git
       server:
         git:
-          uri: https://github.com/ankaiah504/BhumiMatrimony.com.git
+          uri: https://github.com/ankaiah504/bhumi-matrimony-properties.git
           search-paths:
-            - 'Config-Cloud-Setup'
+            - 'ConfigData'
+            - '{application}'
           clone-on-start: true  # 
           username: ankaiah.sree18@gmail.com  
           password: Shivanisree@143
-          default-label: master
+          default-label: main
          
 management:
   endpoints:

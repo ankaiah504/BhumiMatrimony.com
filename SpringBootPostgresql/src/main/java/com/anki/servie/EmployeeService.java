@@ -12,7 +12,7 @@ public interface EmployeeService {
 
 	 EmployeeDTO saveEmployee(EmployeeRequest e);
 	 
-	 Optional<EmployeeDetails>  getEmployeeDetails(int id);
+	 EmployeeDetails  getEmployeeDetails(int id);
 	 
 	 PersonalDTO savePersonalDetails(PersonRequest e);
 }
